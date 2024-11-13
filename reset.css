@@ -1,0 +1,108 @@
+/* Сброс базовых отступов и полей */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Сброс для HTML и Body */
+html {
+    scroll-behavior: smooth;
+    height: 100%;
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    min-height: 100vh;
+    line-height: 1.5;
+    text-rendering: optimizeSpeed;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Сброс для элементов форм */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+    color: inherit;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+/* Сброс для медиа элементов */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* Сброс для текстовых элементов */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    overflow-wrap: break-word;
+    font-weight: normal;
+    font-size: inherit;
+}
+
+/* Сброс для списков */
+ul,
+ol {
+    list-style: none;
+}
+
+/* Сброс для ссылок */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Сброс для таблиц */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Удаление подсветки при фокусе для некоторых браузеров */
+:focus {
+    outline: 0;
+}
+
+/* Сброс для fieldset */
+fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Улучшение читаемости placeholder */
+::placeholder {
+    opacity: 0.6;
+}
+
+/* Удаление стрелок для number input в некоторых браузерах */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Убираем подсветку при тапе на iOS */
+* {
+    -webkit-tap-highlight-color: transparent;
+} 

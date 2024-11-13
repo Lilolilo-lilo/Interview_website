@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Запись это просто</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="container">
+        <div class="hero">
+            <div class="hero__content">
+                <h1 class="hero__title">
+                    <span class="gradient-text">Присоединяйтесь</span>
+                    к тестированию
+                    <span class="gradient-text">уникального</span>
+                    приложения!
+                </h1>
+                <p class="hero__subtitle">Меняем правила игры: покупки никогда<br>не были такими увлекательными.</p>
+                <button class="hero-button" id="openModal">Записаться</button>
+            </div>
+            <div class="hero__image">
+                <img src="images/Main image.png" alt="Приложение">
+            </div>
+        </div>  
+    </main>
+
+   В
+
+    <!-- Модальное окно успеха -->
+    <div class="success-modal" id="successModal">
+        <div class="success-modal__content">
+            <img src="images/Done image.png" alt="Успех" class="success-icon">
+            <h2>Вы успешно записались<br>на тестирование!</h2>
+            <p>Мы вам перезвоним в течение<br>15-30 минут для уточнение деталей.</p>
+            <button class="continue-button" id="continueButton">Продолжить</button>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+    
+    <!-- Подключаем скрипт перед закрывающим тегом body -->
+    <script src="script.js"></script>
+</body>
+</html> 
