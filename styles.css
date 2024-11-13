@@ -115,7 +115,7 @@ body {
 }
 
 /* Модальное окно */
-.modal, .success-modal {
+.modal {
     display: none;
     position: fixed;
     top: 50%;
@@ -470,34 +470,11 @@ input {
     }
 }
 
-.modal__content form input[type="date"],
-.modal__content form input[type="time"] {
+.modal__content form input {
     width: 100%;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background: #F5F5F5;
-    border: none;
-    border-radius: 12px;
     padding: 15px;
-    font-family: 'Actor', sans-serif;
-    font-size: 16px;
-    margin-bottom: 16px;
-    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 1rem;
 }
-
-/* Для Android Chrome */
-.modal__content form input::-webkit-calendar-picker-indicator {
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    right: 10px;
-}
-
-/* Убираем стандартные стили для iOS */
-@supports (-webkit-touch-callout: none) {
-    .modal__content form input[type="date"],
-    .modal__content form input[type="time"] {
-        min-height: 50px;
-    }
-} 
+  
