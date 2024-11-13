@@ -627,7 +627,7 @@ input {
     margin: 0;
 }
 
-/* Стили для контейнера с инпутами даты и времени */
+/* Стили дл�� контейнера с инпутами даты и времени */
 .input-container {
     width: 100%;
     margin: 0;
@@ -740,5 +740,57 @@ input {
 /* Когда поле заполнено, показываем значение */
 .date-time-group input:valid::-webkit-datetime-edit-fields-wrapper {
     display: block;
+}
+
+/* Общие стили для формы */
+#interviewForm {
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* Одинаковый отступ между всеми группами */
+}
+
+/* Стили для всех групп инпутов */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Отступ между label и input */
+}
+
+/* Стили для всех label */
+.input-group label {
+    font-family: 'Actor', sans-serif;
+    font-size: 16px;
+    color: #161616;
+}
+
+/* Стили для всех input */
+.input-group input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    background: #F5F5F5;
+}
+
+/* Стили для кнопки */
+.modal-button {
+    margin-top: 8px; /* Дополнительный отступ перед кнопкой */
+}
+
+/* Специальные стили для date и time инпутов */
+.input-group input[type="date"],
+.input-group input[type="time"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.input-group input[type="date"]::-webkit-calendar-picker-indicator,
+.input-group input[type="time"]::-webkit-calendar-picker-indicator {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 10px;
 }
   
