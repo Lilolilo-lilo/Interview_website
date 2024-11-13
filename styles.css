@@ -764,6 +764,12 @@ input {
     text-align: left;
 }
 
+/* Обертка для input */
+.input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
 /* Стили для всех input */
 .input-group input {
     width: 100%;
@@ -772,29 +778,36 @@ input {
     border-radius: 10px;
     font-size: 16px;
     background: #F5F5F5;
-}
-
-/* Убираем стандартные плейсхолдеры */
-.input-group input::placeholder {
-    color: transparent;
-}
-
-/* Специальные стили для date и time инпутов */
-.input-group input[type="date"],
-.input-group input[type="time"] {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    color: #161616;
 }
 
-/* Стили для иконок календаря и времени */
-.input-group input[type="date"]::-webkit-calendar-picker-indicator,
-.input-group input[type="time"]::-webkit-calendar-picker-indicator {
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    right: 10px;
+/* Специальные стили для мобильных устройств */
+@media (max-width: 480px) {
+    /* Сброс стандартных стилей для date и time на мобильных */
+    input[type="date"],
+    input[type="time"] {
+        position: relative;
+        min-height: 48px;
+    }
+    
+    input[type="date"]::-webkit-datetime-edit-fields-wrapper,
+    input[type="time"]::-webkit-datetime-edit-fields-wrapper {
+        position: relative;
+        left: 0;
+        padding: 0;
+    }
+    
+    input[type="date"]::-webkit-calendar-picker-indicator,
+    input[type="time"]::-webkit-calendar-picker-indicator {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 20px;
+        height: 20px;
+    }
 }
 
 /* Стили для кнопки */

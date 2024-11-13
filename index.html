@@ -21,7 +21,7 @@
                 <button class="hero-button" id="openModal">Записаться</button>
             </div>
             <div class="hero__image">
-                <img src="images/Main image.png" alt="Приложение">
+                <img src="images/Main image.png" alt="Приложени��">
             </div>
         </div>  
     </main>
@@ -38,19 +38,23 @@
             <form id="interviewForm">
                 <div class="input-group">
                     <label>Имя</label>
-                    <input type="text" name="name" placeholder="" required>
+                    <input type="text" name="name" required>
                 </div>
                 <div class="input-group">
                     <label>Телефон</label>
-                    <input type="tel" name="phone" placeholder="" required>
+                    <input type="tel" name="phone" required>
                 </div>
                 <div class="input-group">
                     <label>Дата</label>
-                    <input type="date" name="date" required>
+                    <div class="input-wrapper">
+                        <input type="date" name="date" required>
+                    </div>
                 </div>
                 <div class="input-group">
                     <label>Время</label>
-                    <input type="time" name="time" required>
+                    <div class="input-wrapper">
+                        <input type="time" name="time" required>
+                    </div>
                 </div>
                 <button type="submit" class="modal-button">Записаться на тест</button>
             </form>
