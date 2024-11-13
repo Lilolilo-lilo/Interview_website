@@ -669,4 +669,37 @@ input {
     align-items: center;
     text-align: center;
 }
+
+/* Стили для группы инпута с лейблом */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+/* Стили для лейбла */
+.input-label {
+    font-family: 'Actor', sans-serif;
+    font-size: 16px;
+    color: #161616;
+    text-align: left;
+}
+
+/* Стили для инпутов */
+.input-group input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    background: #F5F5F5;
+}
+
+/* Удаляем старые стили для мобильных подсказок */
+@media (max-width: 480px) {
+    .input-container label {
+        display: none;
+    }
+}
   
