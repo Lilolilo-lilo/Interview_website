@@ -130,34 +130,38 @@ body {
 }
 
 .modal__content {
-    color: #333;
     position: relative;
+    color: #333;
+    text-align: center;
+}
+
+.modal__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
 }
 
 .modal__content h2 {
     font-family: 'Days One', sans-serif;
-    font-size: 32px;
-    margin-bottom: 16px;
-    color: #161616;
-    padding-right: 40px;
+    font-size: 24px;
+    line-height: 32px;
+    text-align: center;
+    margin: 0;
 }
 
 .modal__close {
-    position: absolute;
-    right: 0;
-    top: 8px;
-    cursor: pointer;
+    padding: 0;
     background: none;
     border: none;
-    padding: 8px;
+    cursor: pointer;
     display: flex;
     align-items: center;
-    justify-content: center;
 }
 
 .modal__close img {
-    width: 16px;
-    height: 16px;
+    width: 24px;
+    height: 24px;
 }
 
 form {
@@ -278,7 +282,7 @@ input {
 
     .modal__content h2 {
         font-size: 28px;
-        margin-bottom: 15px;
+        margin-bottom: 8px;
     }
 
     .success-modal h2 {
@@ -378,8 +382,7 @@ input {
 .success-icon {
     width: 200px;
     height: 200px;
-    margin-bottom: 20px;
-    margin: 0 auto;
+    margin: 0 auto 20px;
     display: block;
 }
 
@@ -406,25 +409,48 @@ input {
     transform: translateY(-2px);
 }
 
+.success-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    z-index: 1000;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.success-icon {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 20px;
+    display: block;
+}
+
 .success-modal h2 {
     font-family: 'Days One', sans-serif;
     font-size: 24px;
     line-height: 32px;
     text-align: center;
+    margin: 20px 0;
     background: var(--gradient);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
-    margin-top: 12px;
 }
 
 .success-modal p {
     font-family: 'Actor', sans-serif;
-    font-size: 20px;
+    font-size: 22px;
+    line-height: 30px;
     color: #A9A9A9;
     text-align: center;
-    margin-top: 12px;
+    margin: 16px 0;
 }
 
 .continue-button {
@@ -438,7 +464,7 @@ input {
     font-size: 18px;
     cursor: pointer;
     transition: transform 0.2s ease;
-    margin-top: 60px;
+    margin-top: 30px;
 }
 
 .continue-button:hover {
@@ -470,11 +496,174 @@ input {
     }
 }
 
+/* Для мобильных устройств можно оставить текст чуть меньше */
+@media (max-width: 480px) {
+    .modal__content p {
+        font-size: 20px;
+        line-height: 28px;
+    }
+}
+
+/* Базовые стили для параграфа */
+.modal__content p {
+    font-family: 'Actor', sans-serif;
+    font-size: 18px;
+    line-height: 26px;
+    color: #A9A9A9;
+    text-align: center;
+
+}
+
+/* Для desktop экранов (1920px) */
+@media (min-width: 1920px) {
+    .modal__content p {
+        font-size: 20px;
+        line-height: 28px;
+        margin-bottom: 24px;
+    }
+}
+
+/* Для мобильных устройств */
+@media (max-width: 480px) {
+    .modal__content p {
+        font-size: 20px;
+        line-height: 28px;
+    }
+}
+
+/* Стили для контейнера с инпутом */
+.input-container {
+    position: relative;
+    margin-bottom: 16px;
+}
+
+/* По умолчанию скрываем labels */
+.input-container label {
+    display: none;
+}
+
+/* Показываем labels только на мобильных устройствах */
+@media (max-width: 480px) {
+    .input-container label {
+        display: block;
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #A9A9A9;
+        font-family: 'Actor', sans-serif;
+        font-size: 14px;
+        pointer-events: none;
+    }
+
+    .input-container input {
+        width: 100%;
+        padding: 15px;
+        padding-left: 60px; /* Отступ для текста label */
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        font-size: 16px;
+        background: #F5F5F5;
+    }
+
+    /* Когда поле в фокусе или заполнено */
+    .input-container input:focus + label,
+    .input-container input:not(:placeholder-shown) + label {
+        opacity: 0;
+    }
+}
+
+/* Общие стили для всех input полей */
 .modal__content form input {
     width: 100%;
     padding: 15px;
     border: 1px solid #ddd;
     border-radius: 10px;
-    font-size: 1rem;
+    font-size: 16px;
+    background: #F5F5F5;
+    margin: 0;
+}
+
+/* Специальные стили для input type="date" и type="time" */
+.modal__content form input[type="date"],
+.modal__content form input[type="time"] {
+    width: 100%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* Стили для мобильных устройств */
+@media (max-width: 480px) {
+    .input-container {
+        width: 100%;
+    }
+
+    .input-container input[type="date"],
+    .input-container input[type="time"] {
+        width: 100%;
+        min-height: 50px;
+    }
+}
+
+/* Общие стили для формы */
+.modal__content form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Стили для всех input полей */
+.modal__content form input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    background: #F5F5F5;
+    margin: 0;
+}
+
+/* Стили для контейнера с инпутами даты и времени */
+.input-container {
+    width: 100%;
+    margin: 0;
+}
+
+/* Кнопка отправки формы */
+.modal-button {
+    margin-top: 8px;
+}
+
+/* Стили для заголовка в форме записи */
+.modal__header h2 {
+    font-family: 'Days One', sans-serif;
+    font-size: 24px;
+    line-height: 32px;
+    text-align: left;
+    margin: 0;
+}
+
+/* Стили для заголовка успешной записи */
+.success-title {
+    font-family: 'Days One', sans-serif;
+    font-size: 24px;
+    line-height: 32px;
+    text-align: center;
+    margin: 20px auto;
+    max-width: 90%;
+    background: linear-gradient(90deg, #56E243, #27DFDF, #A1B2F8, #B537E7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+/* Для модального окна успеха */
+#successModal .modal__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
   

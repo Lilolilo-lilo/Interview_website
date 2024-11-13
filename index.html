@@ -29,17 +29,35 @@
     <!-- Модальное окно -->
     <div class="modal" id="modal">
         <div class="modal__content">
-            <button class="modal__close" id="closeModal">
-                <img src="images/Icon close.svg" alt="Close modal">
-            </button>
-            <h2>Записаться</h2>
+            <div class="modal__header">
+                <h2>Записаться</h2>
+                <button class="modal__close" id="closeModal">
+                    <img src="images/Icon close.svg" alt="Close modal">
+                </button>
+            </div>
             <form id="interviewForm">
                 <input type="text" name="name" placeholder="Имя" required>
                 <input type="tel" name="phone" placeholder="Телефон" required>
-                <input type="date" name="date" required>
-                <input type="time" name="time" required>
+                <div class="input-container">
+                    <label>Дата</label>
+                    <input type="date" name="date" required>
+                </div>
+                <div class="input-container">
+                    <label>Время</label>
+                    <input type="time" name="time" required>
+                </div>
                 <button type="submit" class="modal-button">Записаться на тест</button>
             </form>
+        </div>
+    </div>
+
+    <!-- Модальное окно успешной отправки -->
+    <div class="modal" id="successModal">
+        <div class="modal__content">
+            <img src="images/Done image.png" alt="Success" class="success-icon">
+            <h2 class="success-title">Вы успешно записались<br>на тестирование!</h2>
+            <p>Мы вам перезвоним в течение<br>15-30 минут для уточнение деталей.</p>
+            <button class="continue-button" id="continueButton">Продолжить</button>
         </div>
     </div>
 
