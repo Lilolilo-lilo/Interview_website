@@ -38,8 +38,14 @@
             <form id="interviewForm">
                 <input type="text" name="name" placeholder="Имя" required>
                 <input type="tel" name="phone" placeholder="Телефон" required>
-                <input type="date" name="date" placeholder="Дата" required>
-                <input type="time" name="time" placeholder="Время" required>
+                <div class="input-with-icon">
+                    <input type="date" name="date" placeholder="Дата" required>
+                    <img src="images/calendar.svg" alt="calendar" class="input-icon">
+                </div>
+                <div class="input-with-icon">
+                    <input type="time" name="time" placeholder="Время" required>
+                    <img src="images/clock.svg" alt="clock" class="input-icon">
+                </div>
                 <button type="submit" class="modal-button">Записаться на тест</button>
             </form>
         </div>

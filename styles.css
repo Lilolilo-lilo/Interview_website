@@ -662,7 +662,7 @@ input {
     color: transparent;
 }
 
-/* Для ��одального окна успеха */
+/* Для одального окна успеха */
 #successModal .modal__content {
     display: flex;
     flex-direction: column;
@@ -842,5 +842,57 @@ input {
     input[type="time"]:valid::before {
         display: none;
     }
+}
+
+/* Стили для контейнера с иконкой */
+.input-with-icon {
+    position: relative;
+    width: 100%;
+}
+
+/* Стили для иконки */
+.input-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+}
+
+/* Отступ справа для input, чтобы текст не накладывался на иконку */
+.input-with-icon input {
+    width: 100%;
+    padding-right: 45px;
+}
+
+/* Стили для date и time инпутов */
+input[type="date"], 
+input[type="time"] {
+    position: relative;
+    color: #A9A9A9;
+}
+
+/* Стили для placeholder в date и time */
+input[type="date"]::-webkit-datetime-edit-text,
+input[type="date"]::-webkit-datetime-edit-month-field,
+input[type="date"]::-webkit-datetime-edit-day-field,
+input[type="date"]::-webkit-datetime-edit-year-field,
+input[type="time"]::-webkit-datetime-edit-hour-field,
+input[type="time"]::-webkit-datetime-edit-minute-field {
+    color: #A9A9A9;
+}
+
+/* Скрываем стандартные иконки браузера */
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
 }
   
