@@ -895,4 +895,29 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     left: 0;
     cursor: pointer;
 }
+
+/* Цвет для невыбранных значений */
+input[type="date"]::-webkit-datetime-edit-text,
+input[type="date"]::-webkit-datetime-edit-month-field,
+input[type="date"]::-webkit-datetime-edit-day-field,
+input[type="date"]::-webkit-datetime-edit-year-field,
+input[type="time"]::-webkit-datetime-edit-hour-field,
+input[type="time"]::-webkit-datetime-edit-minute-field {
+    color: #A9A9A9;
+}
+
+/* Цвет для выбранных значений */
+input[type="date"]:valid,
+input[type="time"]:valid {
+    color: #161616;
+}
+
+input[type="date"]:valid::-webkit-datetime-edit-text,
+input[type="date"]:valid::-webkit-datetime-edit-month-field,
+input[type="date"]:valid::-webkit-datetime-edit-day-field,
+input[type="date"]:valid::-webkit-datetime-edit-year-field,
+input[type="time"]:valid::-webkit-datetime-edit-hour-field,
+input[type="time"]:valid::-webkit-datetime-edit-minute-field {
+    color: #161616;
+}
   
