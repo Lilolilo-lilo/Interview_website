@@ -702,4 +702,43 @@ input {
         display: none;
     }
 }
+
+/* Стили для группы даты и времени */
+.date-time-group {
+    margin-bottom: 16px;
+}
+
+.date-time-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-family: 'Actor', sans-serif;
+    font-size: 16px;
+    color: #161616;
+}
+
+.date-time-group input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    background: #F5F5F5;
+}
+
+/* Убираем стандартные подсказки браузера */
+.date-time-group input::-webkit-datetime-edit-fields-wrapper { 
+    display: none; 
+}
+
+.date-time-group input::-webkit-calendar-picker-indicator {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 10px;
+}
+
+/* Когда поле заполнено, показываем значение */
+.date-time-group input:valid::-webkit-datetime-edit-fields-wrapper {
+    display: block;
+}
   
