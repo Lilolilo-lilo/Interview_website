@@ -627,7 +627,7 @@ input {
     margin: 0;
 }
 
-/* Стили дл�� контейнера с инпутами даты и времени */
+/* Стили дл контейнера с инпутами даты и времени */
 .input-container {
     width: 100%;
     margin: 0;
@@ -746,14 +746,14 @@ input {
 #interviewForm {
     display: flex;
     flex-direction: column;
-    gap: 16px; /* Одинаковый отступ между всеми группами */
+    gap: 16px;
 }
 
 /* Стили для всех групп инпутов */
 .input-group {
     display: flex;
     flex-direction: column;
-    gap: 8px; /* Отступ между label и input */
+    gap: 8px;
 }
 
 /* Стили для всех label */
@@ -761,6 +761,7 @@ input {
     font-family: 'Actor', sans-serif;
     font-size: 16px;
     color: #161616;
+    text-align: left;
 }
 
 /* Стили для всех input */
@@ -773,9 +774,9 @@ input {
     background: #F5F5F5;
 }
 
-/* Стили для кнопки */
-.modal-button {
-    margin-top: 8px; /* Дополнительный отступ перед кнопкой */
+/* Убираем стандартные плейсхолдеры */
+.input-group input::placeholder {
+    color: transparent;
 }
 
 /* Специальные стили для date и time инпутов */
@@ -784,13 +785,20 @@ input {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+    color: #161616;
 }
 
+/* Стили для иконок календаря и времени */
 .input-group input[type="date"]::-webkit-calendar-picker-indicator,
 .input-group input[type="time"]::-webkit-calendar-picker-indicator {
     width: 20px;
     height: 20px;
     position: absolute;
     right: 10px;
+}
+
+/* Стили для кнопки */
+.modal-button {
+    margin-top: 8px;
 }
   
