@@ -544,6 +544,10 @@ input {
 
 /* Показываем labels только на мобильных устройствах */
 @media (max-width: 480px) {
+    .input-container {
+        position: relative;
+    }
+
     .input-container label {
         display: block;
         position: absolute;
@@ -554,21 +558,20 @@ input {
         font-family: 'Actor', sans-serif;
         font-size: 14px;
         pointer-events: none;
+        transition: opacity 0.2s ease;
     }
 
-    .input-container input {
-        width: 100%;
-        padding: 15px;
-        padding-left: 60px; /* Отступ для текста label */
-        border: 1px solid #ddd;
-        border-radius: 10px;
-        font-size: 16px;
-        background: #F5F5F5;
-    }
-
-    /* Когда поле в фокусе или заполнено */
+    /* Скрываем label когда поле заполнено или в фокусе */
+    .input-container input:not(:placeholder-shown) + label,
     .input-container input:focus + label,
-    .input-container input:not(:placeholder-shown) + label {
+    .input-container input[type="date"]:valid + label,
+    .input-container input[type="time"]:valid + label {
+        opacity: 0;
+    }
+
+    /* Дополнительно для полей с выбранным значением */
+    .input-container input[type="date"]:not(:placeholder-shown) + label,
+    .input-container input[type="time"]:not(:placeholder-shown) + label {
         opacity: 0;
     }
 }
